@@ -2295,7 +2295,7 @@ server <- function(input, output, session) {
       temp_file <- tempfile(fileext = ".xlsx")
       download.file(url, temp_file, mode = "wb")
       # Charger le fichier Excel
-      wb <- loadWorkbook(temp_file)
+      wb <- openxlsx::loadWorkbook(temp_file)
       
       # Supprimer le fichier temporaire après usage (optionnel)
       unlink(temp_file)
